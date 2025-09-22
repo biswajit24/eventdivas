@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Divas - Event Management Services | You Dream We Create</title>
+    <meta name="description" content="Event Divas offers professional event management services for weddings, birthdays, anniversaries, baby showers, and special celebrations. Expert planning, flawless execution.">
+    <meta name="keywords" content="event management, wedding planning, birthday parties, anniversary celebrations, baby shower, event planning services">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- ... (entire head and body code you provided above, unchanged) ... -->
+</head>
+<body class="scroll-smooth font-inter">
+    <!-- Your full HTML content from above goes here -->
+</body>
+</html> <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://drive.google.com/uc?export=view&id=1WDxGJj2mKDKlbdYvNgBCsoOXL_hm9CI5');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .scroll-smooth { scroll-behavior: smooth; }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="scroll-smooth font-inter">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img src="https://drive.google.com/uc?export=view&id=18cCsolX4uzoJxkEpgLhENIXft6Ie_R7H" alt="Event Divas Logo" class="h-10 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="text-2xl font-playfair font-bold gradient-text hidden">Event Divas</div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#packages" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">Packages</a>
+                        <a href="#why-us" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">Why Us</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
+                        <a href="#faq" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">FAQ</a>
+                        <a href="#contact" class="text-gray-700 hover:text-pink-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-pink-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-pink-600">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-pink-600">Services</a>
+                <a href="#packages" class="block px-3 py-2 text-gray-700 hover:text-pink-600">Packages</a>
+                <a href="#why-us" class="block px-3 py-2 text-gray-700 hover:text-pink-600">Why Us</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-pink-600">Gallery</a>
+                <a href="#faq" class="block px-3 py-2 text-gray-700 hover:text-pink-600">FAQ</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-pink-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <div class="mb-8">
+                <div class="text-6xl md:text-8xl font-playfair font-bold mb-4">Event management company</div>
+                <div class="text-2xl md:text-3xl font-light mb-8">You Dream We Create</div>
+            </div>
+            <button onclick="openContactModal()" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Contact Us
+            </button>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Creating unforgettable moments for every celebration</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Birthday Party Backdrop Decoration" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="h-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🎂</div>
+                                <p class="text-white font-semibold text-lg">Birthday Parties</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Birthday Parties</h3>
+                        <p class="text-gray-600">Memorable birthday celebrations with stunning Indian-style backdrops and decorations</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Anniversary Seating Arrangement" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="h-full bg-gradient-to-br from-red-200 to-pink-200 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">💕</div>
+                                <p class="text-white font-semibold text-lg">Anniversary Celebrations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Anniversary Celebrations</h3>
+                        <p class="text-gray-600">Romantic Indian-style seating arrangements and elegant anniversary decorations</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Wedding Mandap Decoration" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="h-full bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">👰</div>
+                                <p class="text-white font-semibold text-lg">Weddings</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Weddings</h3>
+                        <p class="text-gray-600">Traditional Indian wedding mandaps with red fabric, flowers, and entrance decorations</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587393855524-087f83d95bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Baby Shower Stage Decoration" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="h-full bg-gradient-to-br from-blue-200 to-teal-200 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">👶</div>
+                                <p class="text-white font-semibold text-lg">Baby Showers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Baby Showers</h3>
+                        <p class="text-gray-600">Beautiful Indian-style baby shower stage decorations for the new arrival</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544531586-fbd96ceaff1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Rice Ceremony Stage Decoration" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="h-full bg-gradient-to-br from-yellow-200 to-orange-200 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🍚</div>
+                                <p class="text-white font-semibold text-lg">Rice Ceremony</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Rice Ceremony</h3>
+                        <p class="text-gray-600">Traditional Indian rice ceremony stage decorations with cultural significance</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Proposal Flower Decoration" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="h-full bg-gradient-to-br from-green-200 to-blue-200 flex items-center justify-center hidden">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2">🎉</div>
+                                <p class="text-white font-semibold text-lg">Special Celebrations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Special Celebrations</h3>
+                        <p class="text-gray-600">Romantic proposal setups with beautiful flower decorations and surprise arrangements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">Our Packages</h2>
+                <p class="text-xl text-gray-600">Comprehensive packages to suit every need and budget, ensuring a seamless planning experience</p>
+            </div>
+            
+            <!-- Package Comparison Table -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gradient-to-r from-pink-500 to-purple-600 text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold">Services</th>
+                                <th class="px-6 py-4 text-center font-semibold">Bronze</th>
+                                <th class="px-6 py-4 text-center font-semibold">Silver</th>
+                                <th class="px-6 py-4 text-center font-semibold">Gold</th>
+                                <th class="px-6 py-4 text-center font-semibold">Platinum</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Venue and Decoration</td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Basic)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Standard)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Premium)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Luxury)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Catering</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Photography & Videography</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Basic)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Premium)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex flex-col items-center">
+                                        <i class="fas fa-check text-green-500 text-lg mb-1"></i>
+                                        <span class="text-sm text-gray-600">(Cinematic)</span>
+</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Entertainment (DJ/Music/Dance)</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Event Day Coordination</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Guest Management & Hospitality, Choreographer</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+<tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Premium Catering</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Luxury Add-ons (Fireworks, LED walls, Celebrity Host, Concierge)</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900">Installation</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center">-</td>
+                                <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500 text-lg"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">Why Choose Event Divas?</h2>
+                <p class="text-xl text-gray-600">We are dedicated to providing a personalized and stress-free planning experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-heart text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Personalized Approach</h3>
+                    <p class="text-gray-600">We tailor every detail to your unique style and desires.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Stress-Free Planning</h3>
+                    <p class="text-gray-600">We handle the logistics so you can enjoy the journey.</p>
+                </div>
+<div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-eye text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Attention to Detail</h3>
+                    <p class="text-gray-600">Every element is meticulously planned and executed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">Our Gallery</h2>
+                <p class="text-xl text-gray-600">A glimpse into the magical moments we love to create.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Wedding Mandap Gallery" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-pink-200 to-purple-200 rounded-lg h-full flex items-center justify-center hidden">
+<div class="text-center">
+                            <i class="fas fa-camera text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Wedding Gallery</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <p class="text-white font-semibold text-lg">Indian Wedding Mandaps</p>
+                    </div>
+                </div>
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indian Birthday Backdrops" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-blue-200 to-teal-200 rounded-lg h-full flex items-center justify-center hidden">
+                        <div class="text-center">
+                            <i class="fas fa-birthday-cake text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Birthday Events</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <p class="text-white font-semibold text-lg">Birthday Backdrops</p>
+</div>
+                </div>
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Anniversary Seating Arrangements" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-yellow-200 to-orange-200 rounded-lg h-full flex items-center justify-center hidden">
+                        <div class="text-center">
+                            <i class="fas fa-heart text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Anniversary Celebrations</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <p class="text-white font-semibold text-lg">Anniversary Seating</p>
+                    </div>
+                </div>
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="https://images.unsplash.com/photo-1587393855524-087f83d95bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Baby Shower Stage Decorations" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-green-200 to-blue-200 rounded-lg h-full flex items-center justify-center hidden">
+<div class="text-center">
+                            <i class="fas fa-baby text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Baby Showers</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <p class="text-white font-semibold text-lg">Baby Shower Stages</p>
+                    </div>
+                </div>
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="https://images.unsplash.com/photo-1544531586-fbd96ceaff1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Rice Ceremony Stage Decorations" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-purple-200 to-pink-200 rounded-lg h-full flex items-center justify-center hidden">
+                        <div class="text-center">
+                            <i class="fas fa-surprise text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Rice Ceremony</p>
+                        </div>
+                        </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <p class="text-white font-semibold text-lg">Rice Ceremony Stages</p>
+                    </div>
+                </div>
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Proposals" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-red-200 to-pink-200 rounded-lg h-full flex items-center justify-center hidden">
+                        <div class="text-center">
+                            <i class="fas fa-ring text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Proposals</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <p class="text-white font-semibold text-lg">Proposals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Get answers to common questions about our services</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(1)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Can you handle last-minute events?</h3>
+                            <i id="faq-icon-1" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Depending on availability, we do offer last-minute planning services for urgent events.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(2)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Do you charge a consultation fee?</h3>
+<i id="faq-icon-2" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Our initial consultation is free, and we discuss your event requirements before providing a customized quote.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(3)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">How do you ensure the event runs smoothly?</h3>
+                            <i id="faq-icon-3" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Our experienced team oversees every detail, from planning to execution, so you can enjoy the event stress-free.</p>
+                    </div>
+                </div>
+<div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(4)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">How can I get a quote for my event?</h3>
+                            <i id="faq-icon-4" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-4" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Simply contact us via our website form, email, or phone, and we'll provide a tailored quote based on your needs.</p>
+                    </div>
+</div>
+<div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(5)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">What types of events do you organize?</h3>
+                            <i id="faq-icon-5" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-5" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">We organize birthdays, anniversaries, weddings, baby showers, proposals, and special occasions, ensuring every moment is memorable.</p>
+                    </div>
+               </div>
+<div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(6)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Do you provide customized event planning services?</h3>
+                            <i id="faq-icon-6" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-6" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Yes! We tailor every event according to your preferences, theme, and budget.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(7)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">How far in advance should I book an event?</h3>
+                            <i id="faq-icon-7" class="fas fa-plus text-pink-500"></i>
+                        </div>
+                    </button>
+                    <div id="faq-content-7" class="hidden px-6 pb-6">
+                        <p class="text-gray-600">We recommend booking at least 3–6 months in advance for small events like birthdays and anniversaries, and 9-12 months for large events like weddings to ensure availability and smooth planning.</p>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600">Let's start planning your perfect event</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Location</h3>
+                    <p class="text-gray-600">Kalighat, Kolkata,<br>West Bengal, 700026, India</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-600">+91 9382550871<br>+91 8100440421</p>
+                </div>
+<div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600">hello.eventdivas25@gmail.com</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-share-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.instagram.com/eventdivas_official?igsh=YTk5OGI0am9oeGx2" target="_blank" class="text-pink-500 hover:text-pink-600">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61566806654088&mibextid=ZbWKwL" target="_blank" class="text-blue-500 hover:text-blue-600">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <img src="https://drive.google.com/uc?export=view&id=18cCsolX4uzoJxkEpgLhENIXft6Ie_R7H" alt="Event Divas Logo" class="h-12 w-auto mx-auto mb-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="text-3xl font-playfair font-bold gradient-text mb-4 hidden">Event Divas</div>
+                <p class="text-gray-400">Creating unforgettable moments, one event at a time</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center space-x-8 mb-8">
+                <a href="#" onclick="openPolicyModal('privacy')" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" onclick="openPolicyModal('terms')" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" onclick="openPolicyModal('cancellation')" class="text-gray-400 hover:text-white transition-colors">Cancellation Policy</a>
+            </div>
+            
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 Event Divas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-playfair font-bold">Contact Us</h2>
+                <button onclick="closeContactModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="contactForm" onsubmit="submitContactForm(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                        <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date *</label>
+                        <input type="date" name="date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Contact *</label>
+<input type="tel" name="contact" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Location *</label>
+                        <input type="text" name="location" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Event Type *</label>
+                        <select name="eventType" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            <option value="">Select Event Type</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="babyshower">Baby Shower</option>
+                            <option value="rice-ceremony">Rice Ceremony</option>
+                            <option value="surprise">Surprise Party</option>
+                            <option value="proposal">Proposal</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Requirements</label>
+                        <textarea name="requirements" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Tell us about your event requirements..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Budget</label>
+                        <input type="text" name="budget" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Enter your budget">
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold py-3 px-4 rounded-md hover:from-pink-600 hover:to-purple-700 transition-colors">
+                        Submit Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- Policy Modal -->
+    <div id="policyModal" class="modal">
+        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="policyTitle" class="text-2xl font-playfair font-bold"></h2>
+                <button onclick="closePolicyModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="policyContent" class="prose max-w-none"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+// Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-fixed');
+            } else {
+                navbar.classList.remove('navbar-fixed');
+            }
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+// Contact modal functions
+        function openContactModal() {
+            document.getElementById('contactModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            alert('Thank you for your inquiry! We will contact you within 24 hours to discuss your event details.');
+            closeContactModal();
+            event.target.reset();
+        }
+        // Policy modal functions
+        function openPolicyModal(type) {
+            const modal = document.getElementById('policyModal');
+            const title = document.getElementById('policyTitle');
+            const content = document.getElementById('policyContent');
+const policies = {
+                privacy: {
+                    title: 'Privacy Policy',
+                    content: `
+                        <h3><strong>Information We Collect</strong></h3>
+                        <p>We collect information you provide directly to us, such as when you create an account, make a booking, or contact us for support.</p>
+                        
+                        <h3><strong>How We Use Your Information</strong></h3>
+                        <p>We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.</p>
+                        
+                        <h3><strong>Information Sharing</strong></h3>
+                        <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
+                        
+                        <h3><strong>Data Security</strong></h3>
+                        <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                        
+                        <h3><strong>Changes to This Privacy Policy</strong></h3>
+                        <p>Event Divas may update this Privacy Policy at any time. When we do, we will revise the "Last Updated" date at the bottom of this page. We encourage users to review this page regularly to stay informed about how we protect the personal information we collect. You acknowledge and agree that it is your responsibility to check this policy periodically and become aware of any changes.</p>
+<h3><strong>Your Acceptance of These Terms</strong></h3>
+                        <p>By using this website, you signify your acceptance of this Privacy Policy. If you do not agree to this policy, please do not use our website. Your continued use of the website following the posting of changes to this policy will be deemed your acceptance of those changes.</p>
+                        
+                        <h3><strong>Contacting Us</strong></h3>
+                        <p>If you have any questions about this Privacy Policy, the practices of this site, or your interactions with us, please contact us at:</p>
+                        <p>📧 Email: hello.eventdivas25@gmail.com<br>
+                        📞 Phone: 9382550871, +91 81004 40421<br>
+                        🏠 Address: Kalighat, Kolkata 700026, West Bengal.</p>
+                        <p><strong>This document was last updated on September 2025.</strong></p>
+                    `
+                },
+                terms: {
+                    title: 'Terms of Service',
+                    content: `
+                        <p><strong>Last Updated: [Insert Date]</strong></p>
+                        
+                        <p>Welcome to Event Divas! By accessing or using our website and services, you agree to comply with and be bound by the following Terms of Service. Please read these terms carefully. If you do not agree, you should not use our website or services.</p>
+                        
+                        <h3><strong>1. Services</strong></h3>
+                        <p>Event Divas provides event planning, coordination, and related services. The scope of services for each event will be agreed upon separately with each client.</p>
+
+<h3><strong>2. Use of Website</strong></h3>
+                        <p>You agree to use our website only for lawful purposes.</p>
+                        <p>You must not attempt to hack, disrupt, or misuse our site in any way.</p>
+                        <p>We may suspend access to our site if we suspect misuse.</p>
+                        
+                        <h3><strong>3. Bookings and Payments</strong></h3>
+                        <p>All bookings are subject to availability and confirmation.</p>
+                        <p>Payment terms will be shared with clients during booking.</p>
+                        <p>Any advance or deposit made is generally non-refundable unless otherwise stated in writing.</p>
+                        
+                        <h3><strong>4. Vendor and Third-Party Services</strong></h3>
+                        <p>Event Divas may engage third-party vendors (decorators, caterers, photographers, etc.) to fulfill event requirements.</p>
+                        <p>While we take care to choose reliable vendors, we are not liable for any issues, delays, or damages caused by third parties.</p>
+                        
+                        <h3><strong>5. Cancellation and Rescheduling</strong></h3>
+                        <p>Cancellation or rescheduling must be informed in writing within the timeline agreed upon during booking.</p>
+                        <p>Any costs already incurred (such as vendor bookings or purchases) will be deducted from refunds, if applicable.</p>
+                        
+                        <h3><strong>6. Limitation of Liability</strong></h3>
+                        <p>Event Divas is not responsible for indirect, incidental, or unforeseen damages arising out of events or website use.</p>
+                        <p>Our total liability, if any, shall not exceed the fees paid to us for the specific service.</p>
+<h3><strong>7. Intellectual Property</strong></h3>
+                        <p>All content on our website (text, images, logos, designs) is the property of Event Divas.</p>
+                        <p>You may not copy, use, or reproduce it without our written consent.</p>
+                        <h3><strong>8. Changes to These Terms</strong></h3>
+                        <p>Event Divas may update these Terms of Service at any time. When we do, we will revise the "Last Updated" date. Continued use of our website or services after updates means you accept the new terms.</p>
+                        
+                        <h3><strong>9. Governing Law</strong></h3>
+                        <p>These Terms are governed by the laws of India. Any disputes will be subject to the jurisdiction of courts located in Kolkata, West Bengal.</p>
+                        
+                        <h3><strong>10. Contact Us</strong></h3>
+                        <p>If you have any questions about these Terms of Service, please contact us:</p>
+                        <p>📧 Email: hello.eventdivas25@gmail.com<br>
+                        📞 Phone: 9382550871, +91 81004 40421<br>
+                        🏠 Address: Kalighat, Kolkata 700026</p>
+                    `
+                },
+                cancellation: {
+title: 'Refund & Cancellation Policy',
+                    content: `
+                        <p><strong>Last Updated: [Insert Date]</strong></p>
+                        
+                        <p>At Event Divas, we value our clients' trust and aim to provide transparent policies regarding cancellations and refunds. By booking our services, you agree to the following terms:</p>
+                        
+                        <h3><strong>1. Client Cancellations</strong></h3>
+                        <p>All cancellations must be made in writing (email or message).</p>
+                        <p>Advance payments / booking deposits are non-refundable, as they are used to block dates and make initial vendor commitments.</p>
+                        <p>If cancellation is made:</p>
+                        <ul>
+                            <li><strong>30 days or more before the event</strong> → Partial refund may be considered after deducting expenses already incurred.</li>
+                            <li><strong>Less than 30 days before the event</strong> → No refund will be provided.</li>
+                        </ul>
+                        
+                        <h3><strong>2. Rescheduling by Client</strong></h3>
+                        <p>If you wish to reschedule the event, we will do our best to accommodate the new date.</p>
+                        <p>Rescheduling is subject to vendor availability and may involve additional charges.</p>
+                        <p>Advance payments will be adjusted toward the rescheduled date (if confirmed within 6 months).</p>
+                        
+                        <h3><strong>3. Cancellation by Event Divas</strong></h3>
+                        <p>In the unlikely event that Event Divas must cancel due to unforeseen circumstances, we will:</p><ul>
+                            <li>Provide a full refund of any advance payments received, OR</li>
+                            <li>Offer rescheduling to another suitable date, as per client preference.</li>
+                        </ul>
+                        
+                        <h3><strong>4. Vendor & Third-Party Policies</strong></h3>
+                        <p>Please note that vendors engaged through us (decorators, caterers, photographers, venues, etc.) may have their own independent cancellation/refund rules.</p>
+                        <p>Any deductions or non-refundable costs from vendors will be passed on to the client.</p>
+                        
+                        <h3><strong>5. Force Majeure (Unforeseen Events)</strong></h3>
+                        <p>Event Divas is not liable for cancellations or delays caused by events beyond our control, such as natural disasters, strikes, lockdowns, or government restrictions.</p>
+                        <p>In such cases, we will work with you to reschedule the event where possible.</p>
+                        
+                        <h3><strong>6. Refund Processing</strong></h3>
+                        <p>Approved refunds will be processed within 10–15 working days to the client's original mode of payment.</p>
+                        
+                        <h3><strong>7. Contact Us</strong></h3>
+                        <p>For questions about this Refund & Cancellation Policy, please contact us:</p>
+                        <p>📧 Email: hello.eventdivas25@gmail.com<br>
+                        📞 Phone: +91 81004 40421, 9382550871<br>🏠 Address: Kalighat, Kolkata 700026, West Bengal.</p>
+                    `
+                }
+            };
+            
+            title.textContent = policies[type].title;
+            content.innerHTML = policies[type].content;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            const contactModal = document.getElementById('contactModal');
+            const policyModal = document.getElementById('policyModal');
+            
+            if (event.target === contactModal) {
+                closeContactModal();
+            }
+            if (event.target === policyModal) {
+                closePolicyModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c6383fe3d93f97',t:'MTc1NzQxNjAyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){vara=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})
+(),</script></body>
+</html>
+
