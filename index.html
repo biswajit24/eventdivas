@@ -83,7 +83,7 @@
             object-fit: scale-down;
         }
         .bg-black{
-            display: none;
+            display: none !important;
         }
     </style>
 </head>
@@ -488,6 +488,18 @@
                 </div>
                 <div class="rounded-lg h-64 overflow-hidden card-hover relative">
                     <img src="assets/images/proposals.jpg" alt="Proposals" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-gradient-to-br from-red-200 to-pink-200 rounded-lg h-full flex items-center justify-center hidden">
+                        <div class="text-center">
+                            <i class="fas fa-ring text-4xl text-white mb-2"></i>
+                            <p class="text-white font-semibold">Proposals</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0  bg-opacity-40 flex items-center justify-center">
+                       <!---<p class="text-white font-semibold text-lg">Proposals</p>-->
+                    </div>
+                </div>
+                <div class="rounded-lg h-64 overflow-hidden card-hover relative">
+                    <img src="assets/images/gallery_img_7.jpg" alt="image" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="bg-gradient-to-br from-red-200 to-pink-200 rounded-lg h-full flex items-center justify-center hidden">
                         <div class="text-center">
                             <i class="fas fa-ring text-4xl text-white mb-2"></i>
